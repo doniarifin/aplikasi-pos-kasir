@@ -76,5 +76,5 @@
     });
 </script>
 
-<script src="{{ url('js/data.js') }}">{{}}</script>
+<script src="{{ url('js/data.js') }}"></script>
 @endsection

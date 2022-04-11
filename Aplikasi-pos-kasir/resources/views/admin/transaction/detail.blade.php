@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('header', 'Data Transaction')
+@section('header', 'Detail Transaction')
 
 @section('css')
 <!-- Select2 -->
@@ -15,13 +15,13 @@
       <!-- general form elements -->
       <div class="card card-primary">
         <div class="card-header">
-          <h3 class="card-title">Detail Peminjaman</h3>
+          <h3 class="card-title">Detail Transaction</h3>
         </div>
         
         <form>
             <div class="card-body">
                 <div class="form-group">
-                <label>Nama Anggota</label>
+                <label>Nama Customer</label>
                     <div class="col-md-6">
                         <div class="form-control border-0">
                             <span>{{($transaction->customer->name)}}</span>

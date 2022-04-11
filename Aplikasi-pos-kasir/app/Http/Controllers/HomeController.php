@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\Suplier;
 use App\Models\Transaction;
 use App\Models\TransDetail;
+use DateTime;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -30,8 +31,9 @@ class HomeController extends Controller
     public function index()
     {
 
+        $month = date('m');
+        $totalTrans = Transaction::selectRaw("COUNT(*) as total")->whereMonth('created_at', $month)->first()->total;
         $totalProduct = Product::count();
-        $totalTrans = Transaction::count();
         $totalCustomer = Customer::count();
         $totalSuplier = Suplier::count();
 

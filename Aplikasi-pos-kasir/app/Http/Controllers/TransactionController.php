@@ -30,14 +30,14 @@ class TransactionController extends Controller
         $customers = Customer::all();
         $transDetails = TransDetail::all();
         $products = Product::all()->where('qty', '>', 0);
-        $transactions = Transaction::select('transactions.id', 'payment', 'customers.name')
+        $transactions = Transaction::select('transactions.id', 'payment', 'customers.name', 'transactions.created_at as created')
             ->join('customers', 'customers.id', '=', 'customer_id')
             ->get();
 
         return view('admin.transaction.transaction', compact('transactions', 'customers', 'transDetails', 'products'));
     }
 
-    public function api()
+    public function api(Request $request)
     {
         $transactions = Transaction::select('transactions.id', 'customer_id', 'payment', 'name', 'transactions.created_at as created')
             ->join('customers', 'customers.id', '=', 'customer_id')
