@@ -72,8 +72,8 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="name">Customer Name</label>
-                                    <select name="customer_id" class="form-control">
-                                        <option value="0">Selet Customer</option>
+                                    <select name="customer_id" class="form-control" required>
+                                        <option value="" disabled selected>Selet Customer</option>
                                         @foreach($customers as $customer)
                                         <option value="{{ $customer->c_id }}">{{ $customer->c_name }}</option>
                                         @endforeach

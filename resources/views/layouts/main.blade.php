@@ -145,6 +145,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{ url('kategoris') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Categories</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{ url('supliers') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Suppliers</p>
